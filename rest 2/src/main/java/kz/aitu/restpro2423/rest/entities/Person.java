@@ -1,49 +1,61 @@
 package kz.aitu.restpro2423.rest.entities;
 
 public class Person {
-    private String firstName;
-    private String lastName;
+    private int id;
+    private String firstname;
+    private String lastname;
     private String email;
-    private String phoneNumber;
+    private String phonenumber;
+
+    public Person() {}
 
     /// main constructor
-    public Person(String firstName, String lastName, String email, String phoneNumber){
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Person(int id,String firstname, String lastname, String email, String phonenumber){
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.email = email;
-        this.phoneNumber = phoneNumber;
+        this.phonenumber = phonenumber;
     }
+
     /// getters and setters
-    public String getFirstName(){
-        return firstName;
+    public int getId() {
+        return id;
     }
-    public String getLastName(){
-        return lastName;
+    public String getFirstname(){
+        return firstname;
+    }
+    public String getLastname(){
+        return lastname;
     }
     public String getEmail() {
         return email;
     }
-    public String getPhoneNumber(){
-        return phoneNumber;
+    public String getPhonenumber(){
+        return phonenumber;
     }
 
-    public void setFirstName(String fistName){
-        this.firstName = firstName;
+
+    public void setId(int id) {
+        this.id = id;
     }
-    public void setLastName(String lastName){
-        this.lastName = lastName;
+    public void setFirstname(String firstname){
+        this.firstname = firstname;
+    }
+    public void setLastname(String lastname){
+        this.lastname = lastname;
     }
     public void setEmail(String email) {
         this.email = email;
     }
-    public void setPhoneNumber(String phoneNumber){
-        this.phoneNumber = phoneNumber;
+    public void setPhonenumber(String phoneNumber){
+        this.phonenumber = phonenumber;
     }
 
     /// Overriding toString()
     @Override
     public String toString(){
-        return " Name:" + firstName + " " + lastName  + ", Email: " + email  + ", Phone: " + phoneNumber;
+        return "Id:"+ id + " "+" Name:" + firstname + " " + lastname  + ", Email: " + email  + ", Phone: " + phonenumber;
     }
     /// Overriding equals()
     @Override
@@ -51,12 +63,12 @@ public class Person {
         if(this == obj) return true;
         if(obj == null || getClass() != obj.getClass()) return false;
         Person person = (Person)obj;
-        return firstName.equals(person.firstName) && lastName.equals(person.lastName) && email.equals(person.email) && phoneNumber.equals(person.phoneNumber);
+        return firstname.equals(person.firstname) && lastname.equals(person.lastname) && email.equals(person.email) && phonenumber.equals(person.phonenumber);
     }
 
     /// Overriding hashCode()
     @Override
     public int hashCode() {
-        return firstName.hashCode() + lastName.hashCode() + email.hashCode() + phoneNumber.hashCode();
+        return firstname.hashCode() + lastname.hashCode() + email.hashCode() + phonenumber.hashCode();
     }
 }

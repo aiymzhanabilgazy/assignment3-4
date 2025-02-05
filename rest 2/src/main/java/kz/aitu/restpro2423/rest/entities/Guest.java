@@ -4,10 +4,11 @@ public class Guest extends Person {
     /// Attributes specific to Guest
     private String address;
     private String city;
+    public Guest() {}
 
     /// main constructor
-    public Guest(String firstname,String lastname,String email,String phoneNumber,String address,String city){
-        super(firstname,lastname,phoneNumber,email);
+    public Guest(int id,String firstname,String lastname,String email,String phonenumber,String address,String city){
+        super(id,firstname,lastname,phonenumber,email);
         this.address = address;
         this.city = city;
     }
